@@ -244,6 +244,8 @@ integ = sum(g * math.factorial(k) / 1e8 * sum(uM ** j / math.factorial(j) for j 
 farbound = 6.0 / math.pi ** 2 * (1 + 1e-7) * (sum(g * uM ** k for k, g in enumerate(gco)) / 1e16 + integ)
 check(far >= farbound, "the bound %.2e used for m >= 10^8 exceeds the integral bound %.2e" % (far, farbound))
 print("crude tail bound (c_m <= 1 + 4 h_m log m) for m > %d: %.4f" % (N, crude + far))
+check(4.800 < partial and crude + far < 0.5712 and partial + crude + far < 5.372,
+      "4.800 < %.5f <= lambda <= %.5f + %.5f = %.5f < 5.372" % (partial, partial, crude + far, partial + crude + far))
 
 # fitted tail: c_m ~ alpha log^2 m + beta log m + gamma on [N/4, N]
 mfit = np.arange(N // 4, N + 1)

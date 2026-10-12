@@ -36,6 +36,7 @@ PASS a(N, m) is within 0.1% of a(m) = 6 h_{m-1} / (pi^2 (m-1)) for 2 <= m <= 30 
 partial sum sum_{m=2}^{4000} a(m) c_m / m = 4.800594  (a rigorous lower bound for lambda, up to rounding)
 PASS the bound 3.80e-04 used for m >= 10^8 exceeds the integral bound 1.90e-04
 crude tail bound (c_m <= 1 + 4 h_m log m) for m > 4000: 0.5711
+PASS 4.800 < 4.80059 <= lambda <= 4.80059 + 0.57112 = 5.37172 < 5.372
 fit c_m = 0.5756 log^2 m -0.5604 log m +4.7753 on [1000, 4000], max residual 6.1e-04
 fitted tail (three-term fit) = 0.0765, (two-term fit) = 0.0763
 lambda estimate: 4.8771 (three-term) / 4.8769 (two-term); rigorous bracket [4.8006, 5.3717]
